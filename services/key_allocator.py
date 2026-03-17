@@ -4,14 +4,25 @@ from sqlalchemy import select
 from database.models import User, Product, Key, Purchase
 from database.github_sync import save_database
 
-# VIP discount rate (20% off)
-VIP_DISCOUNT = 0.20
+# VIP Fixed Prices Customization
+VIP_PRICES = {
+    "1 КҮН": 200,
+    "7 КҮН": 2000,
+    "15 КҮН": 2500,
+    "30 КҮН": 3500
+}
 
+def get_vip_price(product_name: str, original_price: float) -> float:
+    name_upper = product_name.upper()
+    for key, price in VIP_PRICES.items():
+        if key in name_upper:
+            return float(price)
+    return original_price
 
 def get_effective_price(product: Product, user: User) -> float:
     """Return VIP-discounted price if applicable."""
     if user.is_vip:
-        return round(product.price * (1 - VIP_DISCOUNT), 2)
+        return get_vip_price(product.name, product.price)
     return product.price
 
 
@@ -66,7 +77,7 @@ async def process_purchase(session: AsyncSession, user: User, product_id: int) -
     # Persist to GitHub (fire-and-forget)
     asyncio.create_task(save_database())
 
-    vip_note = " (VIP -20%)" if user.is_vip else ""
+    vip_note = " (VIP жеңілдік)" if user.is_vip else ""
     return True, (
         f"Here is your key for {product.name}:\n"
         f"<code>{key.key_value}</code>\n\n"
