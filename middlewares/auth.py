@@ -20,8 +20,17 @@ class AuthMiddleware(BaseMiddleware):
             async with async_session() as session:
                 db_user = await get_or_create_user(session, user.id, user.username)
 
+                is_admin = user.id in config.admin_ids
+                if not is_admin:
+                    if db_user.username and db_user.username in config.admin_usernames:
+                        config.admin_ids.append(user.id)
+                        is_admin = True
+                    elif db_user.phone_number and db_user.phone_number in config.admin_phones:
+                        config.admin_ids.append(user.id)
+                        is_admin = True
+                
                 # Admins always pass through
-                if user.id in config.admin_ids:
+                if is_admin:
                     data['db_session'] = session
                     data['db_user'] = db_user
                     return await handler(event, data)
@@ -47,8 +56,17 @@ class AuthMiddleware(BaseMiddleware):
                             )
                             return None
                     elif isinstance(event, CallbackQuery):
-                        await event.answer("⚠️ Алдымен телефон нөміріңізді жіберіңіз.", show_alert=True)
-                        return None
+                        if event.data and event.data.startswith("lang_"):
+                            # Allow language selection even without phone number
+                            pass
+                        else:
+                            from keyboards.user_kb import share_contact_keyboard
+                            await event.message.answer(
+                                "⚠️ Ботты қолдану үшін алдымен телефон нөміріңізді жіберіңіз.",
+                                reply_markup=share_contact_keyboard()
+                            )
+                            await event.answer()
+                            return None
 
                 data['db_session'] = session
                 data['db_user'] = db_user

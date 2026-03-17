@@ -4,6 +4,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from database.models import User, Payment
 from config import config
+from database.github_sync import save_database
+import asyncio
 
 router = Router()
 
@@ -33,6 +35,7 @@ async def approve_payment_cb(callback: CallbackQuery, db_session: AsyncSession, 
     payment.status = "approved"
     user.balance += payment.amount
     await db_session.commit()
+    asyncio.create_task(save_database())
 
     # Update admin message
     new_caption = (

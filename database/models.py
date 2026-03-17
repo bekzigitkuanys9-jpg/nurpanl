@@ -9,11 +9,17 @@ class User(Base):
     tg_id = Column(BigInteger, unique=True, index=True, nullable=False)
     username = Column(String, nullable=True)
     phone_number = Column(String, nullable=True)   # set after contact shared
+    language = Column(String, default="kk")
     balance = Column(Float, default=0.0)
     total_spent = Column(Float, default=0.0)
     is_banned = Column(Boolean, default=False)
+    is_vip = Column(Boolean, default=False)
+    # Referral system
+    referred_by = Column(BigInteger, ForeignKey('users.tg_id'), nullable=True)
+    referral_count = Column(Integer, default=0)
+    referral_bonus = Column(Float, default=0.0)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
-    
+
     # Relationships
     purchases = relationship("Purchase", back_populates="user")
     payments = relationship("Payment", back_populates="user")
@@ -65,3 +71,11 @@ class Payment(Base):
     timestamp = Column(DateTime(timezone=True), server_default=func.now())
     
     user = relationship("User", back_populates="payments")
+
+class VipCode(Base):
+    __tablename__ = 'vip_codes'
+    id = Column(Integer, primary_key=True, index=True)
+    code = Column(String, unique=True, nullable=False, index=True)
+    is_used = Column(Boolean, default=False)
+    used_by = Column(BigInteger, ForeignKey('users.tg_id'), nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())

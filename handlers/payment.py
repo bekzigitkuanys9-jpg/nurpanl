@@ -7,6 +7,7 @@ from database.models import User, Payment
 from config import config
 from keyboards.admin_kb import approve_reject_keyboard
 from keyboards.user_kb import main_menu_keyboard
+from locales import get_text, get_all_translations
 
 router = Router()
 
@@ -16,42 +17,33 @@ class PaymentState(StatesGroup):
     waiting_for_receipt = State()
 
 
-@router.message(F.text == "💳 Top-up Balance")
-async def topup_handler(message: Message, state: FSMContext):
+@router.message(F.text.in_(get_all_translations("btn_topup")))
+async def topup_handler(message: Message, state: FSMContext, db_user: User):
     await state.set_state(PaymentState.waiting_for_amount)
     await message.answer(
-        "💳 <b>БАЛАНС ТОЛТЫРУ</b>\n"
-        "━━━━━━━━━━━━━━━━━━━━\n\n"
-        "Толтырғыңыз келетін соманы теңгемен жазыңыз:",
+        get_text(db_user.language, "topup_title"),
         parse_mode="HTML"
     )
 
 
 @router.message(PaymentState.waiting_for_amount)
-async def payment_amount_handler(message: Message, state: FSMContext):
+async def payment_amount_handler(message: Message, state: FSMContext, db_user: User):
     if not message.text or not message.text.strip().isdigit():
-        await message.answer("⚠️ Жарамды сома енгізіңіз (тек сандар).")
+        await message.answer(get_text(db_user.language, "invalid_amount"))
         return
 
     amount = float(message.text.strip())
     if amount <= 0:
-        await message.answer("⚠️ Сома 0-ден үлкен болуы тиіс.")
+        await message.answer(get_text(db_user.language, "amount_zero"))
         return
 
     await state.update_data(amount=amount)
     await state.set_state(PaymentState.waiting_for_receipt)
 
-    text = (
-        f"💳 <b>KASPI АРҚЫЛЫ ТӨЛЕУ</b>\n"
-        f"━━━━━━━━━━━━━━━━━━━━\n\n"
-        f"Төлем сомасы: <b>{amount:,.0f} ₸</b>\n\n"
-        f"📱 Kaspi деректемелері:\n"
-        f"   Телефон: <code>{config.kaspi_phone}</code>\n"
-        f"   Алушы: <b>{config.kaspi_receiver}</b>\n\n"
-        f"✅ Төлемді жасаңыз, содан кейін:\n"
-        f"📸 Скриншотты немесе чек файлын (jpg/png/pdf) жіберіңіз."
+    await message.answer(
+        get_text(db_user.language, "kaspi_pay", amount=amount, phone=config.kaspi_phone, receiver=config.kaspi_receiver),
+        parse_mode="HTML"
     )
-    await message.answer(text, parse_mode="HTML")
 
 
 @router.message(PaymentState.waiting_for_receipt, F.photo | F.document)
@@ -71,7 +63,7 @@ async def payment_receipt_handler(
         file_id = message.document.file_id
 
     if not file_id:
-        await message.answer("⚠️ Сурет немесе файл жіберіңіз.")
+        await message.answer(get_text(db_user.language, "send_receipt"))
         return
 
     payment = Payment(
@@ -86,11 +78,9 @@ async def payment_receipt_handler(
 
     await state.clear()
     await message.answer(
-        "✅ <b>Төлем сұранысы жіберілді!</b>\n\n"
-        "Админ тексеріп, балансыңызды толтырады.\n"
-        "Шыдамдылықпен күтіңіз. 🙏",
+        get_text(db_user.language, "payment_sent"),
         parse_mode="HTML",
-        reply_markup=main_menu_keyboard()
+        reply_markup=main_menu_keyboard(db_user.language)
     )
 
     if not config.admin_ids:
@@ -127,3 +117,4 @@ async def payment_receipt_handler(
                 )
         except Exception as e:
             print(f"Admin {admin_id} хабар жіберілмеді: {e}")
+

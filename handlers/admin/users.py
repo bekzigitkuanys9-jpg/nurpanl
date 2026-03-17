@@ -6,6 +6,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, or_, func
 from database.models import User, Key, Payment
 from config import config
+from database.github_sync import save_database
+import asyncio
 
 router = Router()
 
@@ -37,25 +39,49 @@ async def ban_user_start(message: Message, state: FSMContext, db_user: User):
 
 @router.message(AdminUserState.waiting_for_ban_id)
 async def process_ban_user(message: Message, state: FSMContext, db_session: AsyncSession):
-    if not message.text or not message.text.strip().isdigit():
-        await message.answer("⚠️ Жарамды Telegram ID жіберіңіз (тек сандар).")
+    query = message.text.strip() if message.text else ""
+    if not query:
+        await message.answer("⚠️ Жіберіңіз.")
         return
 
-    user_id = int(message.text.strip())
-    user = await db_session.scalar(select(User).where(User.tg_id == user_id))
+    user = None
+
+    if query.isdigit() and len(query) < 10:
+        pass # Handle below
+
+    if query.startswith("+") or (query.isdigit() and len(query) >= 10):
+        # Search by phone number
+        normalized = query if query.startswith("+") else "+" + query
+        user = await db_session.scalar(
+            select(User).where(or_(User.phone_number == query, User.phone_number == normalized))
+        )
+    elif query.isdigit():
+        # Search by Telegram ID
+        user = await db_session.scalar(select(User).where(User.tg_id == int(query)))
+    else:
+        # Search by username (with or without @)
+        uname = query.lstrip("@")
+        user = await db_session.scalar(select(User).where(func.lower(User.username) == func.lower(uname)))
 
     if not user:
-        await message.answer(f"❌ ID={user_id} пайдаланушы табылмады.")
+        await message.answer(
+            f"❌ <b>Табылмады</b>\n\n"
+            f"<code>{query}</code> бойынша пайдаланушы жоқ.\n"
+            f"ID, @username немесе телефон нөмірін тексеріп қайта жіберіңіз.",
+            parse_mode="HTML"
+        )
     else:
         user.is_banned = not user.is_banned
         await db_session.commit()
+        asyncio.create_task(save_database())
         status = "🔴 БЛОКТАЛДЫ" if user.is_banned else "🟢 БҰҒАТ АЛЫНДЫ"
         await message.answer(
-            f"✅ Пайдаланушы <code>{user_id}</code> — {status}",
+            f"✅ Пайдаланушы <code>{user.tg_id} / @{user.username or 'no_username'}</code> — {status}",
             parse_mode="HTML"
         )
 
     await state.clear()
+
 
 
 # ─── ADD BALANCE ─────────────────────────────────────────────────
@@ -67,26 +93,48 @@ async def add_bal_start(message: Message, state: FSMContext, db_user: User):
     await state.set_state(AdminUserState.waiting_for_add_bal_id)
     await message.answer(
         "💰 <b>Баланс қосу</b>\n\n"
-        "Пайдаланушының Telegram ID-ін жіберіңіз:",
+        "Пайдаланушының айдиын(Telegram ID) немесе @username жіберіңіз:",
         parse_mode="HTML"
     )
 
 
 @router.message(AdminUserState.waiting_for_add_bal_id)
 async def process_add_bal_id(message: Message, state: FSMContext, db_session: AsyncSession):
-    if not message.text or not message.text.strip().isdigit():
-        await message.answer("⚠️ Жарамды Telegram ID жіберіңіз.")
+    query = message.text.strip() if message.text else ""
+    if not query:
+        await message.answer("⚠️ Жіберіңіз.")
         return
 
-    user_id = int(message.text.strip())
-    user = await db_session.scalar(select(User).where(User.tg_id == user_id))
+    user = None
+
+    if query.isdigit() and len(query) < 10:
+        pass # Handle below
+
+    if query.startswith("+") or (query.isdigit() and len(query) >= 10):
+        # Search by phone number
+        normalized = query if query.startswith("+") else "+" + query
+        user = await db_session.scalar(
+            select(User).where(or_(User.phone_number == query, User.phone_number == normalized))
+        )
+    elif query.isdigit():
+        # Search by Telegram ID
+        user = await db_session.scalar(select(User).where(User.tg_id == int(query)))
+    else:
+        # Search by username (with or without @)
+        uname = query.lstrip("@")
+        user = await db_session.scalar(select(User).where(func.lower(User.username) == func.lower(uname)))
 
     if not user:
-        await message.answer(f"❌ ID={user_id} пайдаланушы табылмады.")
+        await message.answer(
+            f"❌ <b>Табылмады</b>\n\n"
+            f"<code>{query}</code> бойынша пайдаланушы жоқ.\n"
+            f"ID, @username немесе телефон нөмірін тексеріп қайта жіберіңіз.",
+            parse_mode="HTML"
+        )
         await state.clear()
         return
 
-    await state.update_data(target_user_id=user_id)
+    await state.update_data(target_user_id=user.tg_id)
     await state.set_state(AdminUserState.waiting_for_add_bal_amount)
     await message.answer(
         f"✅ Пайдаланушы табылды!\n\n"
@@ -112,10 +160,11 @@ async def process_add_bal_amount(message: Message, state: FSMContext, db_session
     if user:
         user.balance += amount
         await db_session.commit()
+        asyncio.create_task(save_database())
         action = "➕ Қосылды" if amount >= 0 else "➖ Шегерілді"
         await message.answer(
             f"✅ <b>Сәтті!</b>\n\n"
-            f"👤 <code>{user_id}</code>\n"
+            f"👤 @{user.username or user_id}\n"
             f"{action}: <b>{abs(amount):,.0f} ₸</b>\n"
             f"💳 Жаңа баланс: <b>{user.balance:,.0f} ₸</b>",
             parse_mode="HTML"
@@ -152,19 +201,24 @@ async def process_user_info(message: Message, state: FSMContext, db_session: Asy
 
     user = None
 
-    if query.isdigit():
-        # Search by Telegram ID
-        user = await db_session.scalar(select(User).where(User.tg_id == int(query)))
-    elif query.startswith("+") or (len(query) >= 10 and query.lstrip("+").isdigit()):
+    if query.isdigit() and len(query) < 10:
+        # Search by Telegram ID (typically < 10 digits unless it's a very long ID, but phones are usually longer)
+        # Actually IDs can be up to 10-15 digits now, so checking if it starts with + or is just digits
+        pass # Handle below
+
+    if query.startswith("+") or (query.isdigit() and len(query) >= 10):
         # Search by phone number
         normalized = query if query.startswith("+") else "+" + query
         user = await db_session.scalar(
             select(User).where(or_(User.phone_number == query, User.phone_number == normalized))
         )
+    elif query.isdigit():
+        # Search by Telegram ID
+        user = await db_session.scalar(select(User).where(User.tg_id == int(query)))
     else:
         # Search by username (with or without @)
         uname = query.lstrip("@")
-        user = await db_session.scalar(select(User).where(User.username == uname))
+        user = await db_session.scalar(select(User).where(func.lower(User.username) == func.lower(uname)))
 
     if not user:
         await message.answer(

@@ -2,37 +2,55 @@ from aiogram.types import (
     ReplyKeyboardMarkup, KeyboardButton,
     InlineKeyboardMarkup, InlineKeyboardButton
 )
+from locales import get_text
 
 # ─── CONTACT SHARE (first-time users) ────────────────────────────
 
-def share_contact_keyboard() -> ReplyKeyboardMarkup:
+def share_contact_keyboard(lang: str = "kk") -> ReplyKeyboardMarkup:
     """Keyboard with a request_contact button for identity verification."""
     return ReplyKeyboardMarkup(
-        keyboard=[[KeyboardButton(text="📱 Контактімді жіберу", request_contact=True)]],
+        keyboard=[[KeyboardButton(text=get_text(lang, "share_contact"), request_contact=True)]],
         resize_keyboard=True,
         one_time_keyboard=True
     )
 
+def language_keyboard() -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [InlineKeyboardButton(text="🇰🇿 Қазақша", callback_data="lang_kk")],
+            [InlineKeyboardButton(text="🇷🇺 Русский", callback_data="lang_ru")],
+            [InlineKeyboardButton(text="🇬🇧 English", callback_data="lang_en")]
+        ]
+    )
+
 # ─── USER KEYBOARDS ───────────────────────────────────────────────
 
-def main_menu_keyboard() -> ReplyKeyboardMarkup:
+def main_menu_keyboard(lang: str = "kk") -> ReplyKeyboardMarkup:
     """Main dashboard keyboard."""
     return ReplyKeyboardMarkup(
         keyboard=[
-            [KeyboardButton(text="🛒 Products"), KeyboardButton(text="💳 Top-up Balance")],
-            [KeyboardButton(text="🔑 My Keys"),  KeyboardButton(text="👥 Referral")],
-            [KeyboardButton(text="👤 My Profile"), KeyboardButton(text="🌐 Useful Links")],
+            [KeyboardButton(text=get_text(lang, "btn_products")), KeyboardButton(text=get_text(lang, "btn_topup"))],
+            [KeyboardButton(text=get_text(lang, "btn_keys")),  KeyboardButton(text=get_text(lang, "btn_referral"))],
+            [KeyboardButton(text=get_text(lang, "btn_profile")), KeyboardButton(text=get_text(lang, "btn_links"))],
+            [KeyboardButton(text=get_text(lang, "btn_settings"))]
         ],
         resize_keyboard=True
     )
 
-def products_keyboard(products) -> InlineKeyboardMarkup:
-    """One inline Buy button per product."""
+
+def products_keyboard(products, is_vip: bool = False, lang: str = "kk") -> InlineKeyboardMarkup:
+    """One inline Buy button per product. Shows VIP price if applicable."""
+    from services.key_allocator import VIP_DISCOUNT
     rows = []
     for p in products:
+        if is_vip:
+            vip_price = round(p.price * (1 - VIP_DISCOUNT))
+            label = f"⭐ {p.name} — {vip_price:,} ₸  (VIP)"
+        else:
+            label = f"🛍 {p.name} — {int(p.price)} ₸"
         rows.append([
             InlineKeyboardButton(
-                text=f"🛍 {p.name} — {int(p.price)} ₸",
+                text=label,
                 callback_data=f"buy_{p.id}"
             )
         ])
