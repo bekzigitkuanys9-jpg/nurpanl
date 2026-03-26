@@ -58,6 +58,9 @@ async def main():
     dp.include_router(vip_admin.router)
     dp.include_router(broadcast.router)
     
+    async def health_check(request):
+        return web.Response(text="OK", status=200)
+    
     if config.use_webhook:
         app = web.Application()
         webhook_requests_handler = SimpleRequestHandler(
@@ -65,6 +68,8 @@ async def main():
             bot=bot,
         )
         webhook_requests_handler.register(app, path=config.webhook_path)
+        app.router.add_get("/", health_check)
+        app.router.add_get("/healthz", health_check)
         setup_application(app, dp, bot=bot)
         
         runner = web.AppRunner(app)
