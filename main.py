@@ -1,4 +1,5 @@
 import asyncio
+import os
 import logging
 from aiogram import Bot, Dispatcher
 from aiogram.webhook.aiohttp_server import SimpleRequestHandler, setup_application
@@ -15,9 +16,10 @@ from handlers import vip
 from handlers.admin import panel, moderation, keys, users, products, vip_admin, broadcast
 
 async def on_startup(bot: Bot):
-    if config.use_webhook and config.webhook_url:
-        await bot.set_webhook(f"{config.webhook_url}{config.webhook_path}", drop_pending_updates=True)
-        logging.info(f"Webhook set to {config.webhook_url}{config.webhook_path}")
+    actual_url = os.environ.get("RENDER_EXTERNAL_URL") or config.webhook_url
+    if config.use_webhook and actual_url:
+        await bot.set_webhook(f"{actual_url}{config.webhook_path}", drop_pending_updates=True)
+        logging.info(f"Webhook set to {actual_url}{config.webhook_path}")
 
 async def on_shutdown(bot: Bot):
     logging.info("Shutting down...")
