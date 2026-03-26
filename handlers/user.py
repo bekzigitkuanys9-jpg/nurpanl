@@ -60,10 +60,13 @@ async def buy_product_cb(callback: CallbackQuery, db_user: User, db_session: Asy
 
 @router.message(F.text.in_(get_all_translations("btn_keys")))
 async def my_keys_handler(message: Message, db_user: User, db_session: AsyncSession):
+    from sqlalchemy.orm import selectinload
+    
     result = await db_session.execute(
-        select(Key).join(Product)
+        select(Key)
+        .options(selectinload(Key.product), selectinload(Key.purchase))
         .where(Key.used_by == db_user.tg_id)
-        .order_by(Key.created_at.desc())
+        .order_by(Key.id.desc())
     )
     keys = result.scalars().all()
 
@@ -74,6 +77,13 @@ async def my_keys_handler(message: Message, db_user: User, db_session: AsyncSess
     title = get_text(db_user.language, "keys_title")
     text = f"{title}\n━━━━━━━━━━━━━━━━━━━━\n\n"
     for key in keys:
-        text += f"📦 <b>{key.product.name}</b>\n<code>{key.key_value}</code>\n\n"
+        if key.purchase and key.purchase.timestamp:
+            dt = key.purchase.timestamp.strftime("%d.%m.%Y %H:%M")
+        elif key.created_at:
+            dt = key.created_at.strftime("%d.%m.%Y %H:%M")
+        else:
+            dt = "Белгісіз"
+            
+        text += f"📦 <b>{key.product.name}</b>\n🔑 <code>{key.key_value}</code>\n🕒 <i>{dt}</i>\n\n"
 
     await message.answer(text, parse_mode="HTML")

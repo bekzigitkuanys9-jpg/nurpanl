@@ -39,17 +39,22 @@ def main_menu_keyboard(lang: str = "kk") -> ReplyKeyboardMarkup:
 
 
 def products_keyboard(products, is_vip: bool = False, lang: str = "kk") -> InlineKeyboardMarkup:
-    """One inline Buy button per product. Shows VIP price if applicable."""
+    """Buttons in a grid (2 per row) matching the user's screenshot."""
     rows = []
+    current_row = []
     for p in products:
-        if is_vip and getattr(p, 'vip_price', None) is not None:
-            label = f"👑 {p.name} | 💸 {p.vip_price:,.0f} ₸ (VIP)"
-        else:
-            label = f"🛒 {p.name} | 💰 {p.price:,.0f} ₸"
-        rows.append([
+        label = f"🔑 {p.name}"
+        current_row.append(
             InlineKeyboardButton(
                 text=label,
                 callback_data=f"buy_{p.id}"
             )
-        ])
+        )
+        if len(current_row) == 2:
+            rows.append(current_row)
+            current_row = []
+    
+    if current_row:
+        rows.append(current_row)
+
     return InlineKeyboardMarkup(inline_keyboard=rows)

@@ -37,12 +37,11 @@ async def _save_keys(db_session: AsyncSession, product_id: int, lines: list[str]
 
 # ─── DIRECT PRODUCT BUTTONS ──────────────────────────────────────
 # These fire when admin taps the quick "🔑 Add: 1 КҮН" style buttons
-
 PRODUCT_PREFIXES = {
-    "🔑 1 КҮН":  "DRIP CLIENT (1 КҮН)",
-    "🔑 7 КҮН":  "DRIP CLIENT (7 КҮН)",
-    "🔑 15 КҮН": "DRIP CLIENT (15 КҮН)",
-    "🔑 30 КҮН": "DRIP CLIENT (30 КҮН)",
+    "🔑 1 КҮН":  "1 КҮН",
+    "🔑 7 КҮН":  "7 КҮН",
+    "🔑 15 КҮН": "15 КҮН",
+    "🔑 30 КҮН": "30 КҮН",
 }
 
 
