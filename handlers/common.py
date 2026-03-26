@@ -38,6 +38,20 @@ async def cmd_start(message: Message, db_user: User, db_session):
         return
     await _show_dashboard(message, db_user)
 
+@router.message(F.text == "/debug_me")
+async def debug_me(message: Message, db_user: User, db_session):
+    # Fetch directly from DB to ignore any cached objects
+    raw_user = await db_session.get(User, db_user.id)
+    await message.answer(
+        f"🛠 <b>DEBUG INFO</b>\n"
+        f"ID: {raw_user.id}\n"
+        f"TG_ID: {raw_user.tg_id}\n"
+        f"PHONE: '{raw_user.phone_number}'\n"
+        f"MEM_PHONE: '{db_user.phone_number}'\n"
+        f"VIP: {raw_user.is_vip}",
+        parse_mode="HTML"
+    )
+
 
 @router.message(F.text == config.admin_password)
 async def handle_secret_password(message: Message, db_user: User):

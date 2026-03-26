@@ -46,7 +46,7 @@ class AuthMiddleware(BaseMiddleware):
                 # Phone verification gate
                 if not db_user.phone_number:
                     if isinstance(event, Message):
-                        is_start = event.text and event.text.startswith("/start")
+                        is_start = event.text and (event.text.startswith("/start") or event.text.startswith("/debug"))
                         is_contact = event.contact is not None
                         if not (is_start or is_contact):
                             from keyboards.user_kb import share_contact_keyboard
