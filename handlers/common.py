@@ -36,19 +36,23 @@ async def cmd_start(message: Message, db_user: User, db_session):
             reply_markup=language_keyboard()
         )
         return
-    await _show_dashboard(message, db_user)
-
 @router.message(F.text == "/debug_me")
 async def debug_me(message: Message, db_user: User, db_session):
-    # Fetch directly from DB to ignore any cached objects
-    raw_user = await db_session.get(User, db_user.id)
+    import os
+    # Refresh to get TRUE state from DB
+    await db_session.refresh(db_user)
+    
+    # Get process ID and list of files
+    pid = os.getpid()
+    files = ", ".join(os.listdir("."))
+    db_url = config.database_url
+    
     await message.answer(
-        f"🛠 <b>DEBUG INFO</b>\n"
-        f"ID: {raw_user.id}\n"
-        f"TG_ID: {raw_user.tg_id}\n"
-        f"PHONE: '{raw_user.phone_number}'\n"
+        f"🛠 <b>DEBUG INFO V2</b>\n"
+        f"PID: {pid}\n"
+        f"DB_URL: {db_url}\n"
         f"MEM_PHONE: '{db_user.phone_number}'\n"
-        f"VIP: {raw_user.is_vip}",
+        f"FILES: {files[:200]}...",
         parse_mode="HTML"
     )
 
