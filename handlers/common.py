@@ -1,5 +1,5 @@
 from aiogram import Router, F, Bot
-from aiogram.types import Message, CallbackQuery
+from aiogram.types import Message, CallbackQuery, ReplyKeyboardRemove
 from aiogram.filters import CommandStart
 from sqlalchemy import select
 from database.models import User
@@ -86,7 +86,8 @@ async def handle_contact(message: Message, db_user: User, db_session, bot: Bot):
 
     await message.answer(
         get_text(db_user.language, "verify_success", phone=contact.phone_number),
-        parse_mode="HTML"
+        parse_mode="HTML",
+        reply_markup=ReplyKeyboardRemove()
     )
     await _show_dashboard(message, db_user)
 
