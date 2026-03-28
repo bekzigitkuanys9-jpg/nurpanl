@@ -37,6 +37,9 @@ async def cmd_start(message: Message, db_user: User, db_session):
             reply_markup=share_contact_keyboard("en")
         )
         return
+        
+    await _show_dashboard(message, db_user)
+
 @router.message(F.text == "/debug_me")
 async def debug_me(message: Message, db_user: User, db_session):
     import os
