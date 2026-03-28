@@ -11,7 +11,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T17:01:59"
+      "created_at": "2026-03-28T17:29:35"
     },
     "8497807404": {
       "tg_id": 8497807404,
@@ -24,7 +24,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T17:01:59"
+      "created_at": "2026-03-28T17:29:35"
     },
     "8454938102": {
       "tg_id": 8454938102,
@@ -37,7 +37,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T17:01:59"
+      "created_at": "2026-03-28T17:29:35"
     },
     "8596839838": {
       "tg_id": 8596839838,
@@ -50,7 +50,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T17:01:59"
+      "created_at": "2026-03-28T17:29:35"
     },
     "8162954476": {
       "tg_id": 8162954476,
@@ -63,7 +63,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T17:01:59"
+      "created_at": "2026-03-28T17:29:35"
     },
     "8437682887": {
       "tg_id": 8437682887,
@@ -76,7 +76,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T17:01:59"
+      "created_at": "2026-03-28T17:29:35"
     },
     "8523027412": {
       "tg_id": 8523027412,
@@ -89,7 +89,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T17:01:59"
+      "created_at": "2026-03-28T17:29:35"
     },
     "7759804495": {
       "tg_id": 7759804495,
@@ -102,7 +102,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T17:01:59"
+      "created_at": "2026-03-28T17:29:35"
     },
     "6397267874": {
       "tg_id": 6397267874,
@@ -115,7 +115,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T17:01:59"
+      "created_at": "2026-03-28T17:29:35"
     },
     "7403000084": {
       "tg_id": 7403000084,
@@ -128,7 +128,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T17:01:59"
+      "created_at": "2026-03-28T17:29:35"
     },
     "8393212079": {
       "tg_id": 8393212079,
@@ -141,7 +141,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T17:01:59"
+      "created_at": "2026-03-28T17:29:35"
     },
     "6718632328": {
       "tg_id": 6718632328,
@@ -154,7 +154,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T17:01:59"
+      "created_at": "2026-03-28T17:29:35"
     },
     "7002870459": {
       "tg_id": 7002870459,
@@ -167,7 +167,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T17:01:59"
+      "created_at": "2026-03-28T17:29:35"
     },
     "8140461619": {
       "tg_id": 8140461619,
@@ -180,7 +180,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T17:02:00"
+      "created_at": "2026-03-28T17:29:35"
     },
     "7447345121": {
       "tg_id": 7447345121,
@@ -193,7 +193,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T17:02:00"
+      "created_at": "2026-03-28T17:29:35"
     },
     "6118107102": {
       "tg_id": 6118107102,
@@ -206,7 +206,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T17:02:00"
+      "created_at": "2026-03-28T17:29:35"
     },
     "7844657193": {
       "tg_id": 7844657193,
@@ -219,7 +219,72 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T17:07:08"
+      "created_at": "2026-03-28T17:29:35"
+    },
+    "8256322291": {
+      "tg_id": 8256322291,
+      "username": null,
+      "phone_number": null,
+      "balance": 0.0,
+      "total_spent": 0.0,
+      "is_banned": false,
+      "is_vip": false,
+      "referred_by": null,
+      "referral_count": 0,
+      "referral_bonus": 0.0,
+      "created_at": "2026-03-28T17:44:56"
+    },
+    "8272058119": {
+      "tg_id": 8272058119,
+      "username": null,
+      "phone_number": null,
+      "balance": 0.0,
+      "total_spent": 0.0,
+      "is_banned": false,
+      "is_vip": false,
+      "referred_by": null,
+      "referral_count": 0,
+      "referral_bonus": 0.0,
+      "created_at": "2026-03-28T17:51:09"
+    },
+    "7215756573": {
+      "tg_id": 7215756573,
+      "username": null,
+      "phone_number": null,
+      "balance": 0.0,
+      "total_spent": 0.0,
+      "is_banned": false,
+      "is_vip": false,
+      "referred_by": null,
+      "referral_count": 0,
+      "referral_bonus": 0.0,
+      "created_at": "2026-03-28T17:55:05"
+    },
+    "8446829828": {
+      "tg_id": 8446829828,
+      "username": null,
+      "phone_number": null,
+      "balance": 0.0,
+      "total_spent": 0.0,
+      "is_banned": false,
+      "is_vip": false,
+      "referred_by": null,
+      "referral_count": 0,
+      "referral_bonus": 0.0,
+      "created_at": "2026-03-28T17:57:16"
+    },
+    "8354610413": {
+      "tg_id": 8354610413,
+      "username": "You_You_You_Gay",
+      "phone_number": "77781324531",
+      "balance": 0.0,
+      "total_spent": 0.0,
+      "is_banned": false,
+      "is_vip": false,
+      "referred_by": null,
+      "referral_count": 0,
+      "referral_bonus": 0.0,
+      "created_at": "2026-03-28T19:40:29"
     }
   },
   "vip_codes": {},
@@ -229,7 +294,7 @@
       "key_value": "8231731018",
       "is_used": true,
       "used_by": 7793529888,
-      "created_at": "2026-03-28T17:02:00"
+      "created_at": "2026-03-28T17:29:35"
     }
   },
   "purchases": {
@@ -238,7 +303,7 @@
       "product_id": 1,
       "key_id": 1,
       "price": 399.0,
-      "timestamp": "2026-03-28T17:02:00"
+      "timestamp": "2026-03-28T17:29:35"
     }
   },
   "referrals": [],
@@ -252,11 +317,11 @@
     }
   },
   "_meta": {
-    "total_users": 17,
+    "total_users": 22,
     "total_vip_users": 0,
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 0,
-    "last_saved": "2026-03-28T17:07:12.182118Z"
+    "last_saved": "2026-03-28T19:40:32.221806Z"
   }
 }
