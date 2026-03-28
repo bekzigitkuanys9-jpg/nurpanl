@@ -11,7 +11,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T13:27:47"
+      "created_at": "2026-03-28T13:59:29"
     },
     "8497807404": {
       "tg_id": 8497807404,
@@ -24,7 +24,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T13:27:47"
+      "created_at": "2026-03-28T13:59:29"
     },
     "8454938102": {
       "tg_id": 8454938102,
@@ -37,7 +37,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T13:27:47"
+      "created_at": "2026-03-28T13:59:29"
     },
     "8596839838": {
       "tg_id": 8596839838,
@@ -50,7 +50,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T13:27:47"
+      "created_at": "2026-03-28T13:59:29"
     },
     "8162954476": {
       "tg_id": 8162954476,
@@ -63,7 +63,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T13:27:47"
+      "created_at": "2026-03-28T13:59:29"
     },
     "8437682887": {
       "tg_id": 8437682887,
@@ -76,7 +76,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T13:27:47"
+      "created_at": "2026-03-28T13:59:29"
     },
     "8523027412": {
       "tg_id": 8523027412,
@@ -89,7 +89,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T13:27:47"
+      "created_at": "2026-03-28T13:59:29"
     },
     "7759804495": {
       "tg_id": 7759804495,
@@ -102,12 +102,12 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T13:27:47"
+      "created_at": "2026-03-28T13:59:29"
     },
     "6397267874": {
       "tg_id": 6397267874,
       "username": "Qanat_1717",
-      "phone_number": null,
+      "phone_number": "998945120415",
       "balance": 0.0,
       "total_spent": 0.0,
       "is_banned": false,
@@ -115,7 +115,7 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T13:52:11"
+      "created_at": "2026-03-28T13:59:29"
     },
     "7403000084": {
       "tg_id": 7403000084,
@@ -128,7 +128,20 @@
       "referred_by": null,
       "referral_count": 0,
       "referral_bonus": 0.0,
-      "created_at": "2026-03-28T13:54:49"
+      "created_at": "2026-03-28T13:59:29"
+    },
+    "8393212079": {
+      "tg_id": 8393212079,
+      "username": null,
+      "phone_number": null,
+      "balance": 0.0,
+      "total_spent": 0.0,
+      "is_banned": false,
+      "is_vip": false,
+      "referred_by": null,
+      "referral_count": 0,
+      "referral_bonus": 0.0,
+      "created_at": "2026-03-28T14:00:42"
     }
   },
   "vip_codes": {},
@@ -138,7 +151,7 @@
       "key_value": "8231731018",
       "is_used": true,
       "used_by": 7793529888,
-      "created_at": "2026-03-28T13:27:47"
+      "created_at": "2026-03-28T13:59:29"
     }
   },
   "purchases": {
@@ -147,7 +160,7 @@
       "product_id": 1,
       "key_id": 1,
       "price": 399.0,
-      "timestamp": "2026-03-28T13:27:47"
+      "timestamp": "2026-03-28T13:59:29"
     }
   },
   "referrals": [],
@@ -161,11 +174,11 @@
     }
   },
   "_meta": {
-    "total_users": 10,
+    "total_users": 11,
     "total_vip_users": 0,
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 0,
-    "last_saved": "2026-03-28T13:55:03.066817Z"
+    "last_saved": "2026-03-28T14:00:55.294503Z"
   }
 }
