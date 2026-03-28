@@ -324,6 +324,19 @@
       "referral_count": 0,
       "referral_bonus": 0.0,
       "created_at": "2026-03-28T19:41:41"
+    },
+    "7943802041": {
+      "tg_id": 7943802041,
+      "username": "mukha_panel",
+      "phone_number": "77714656992",
+      "balance": 0.0,
+      "total_spent": 0.0,
+      "is_banned": false,
+      "is_vip": false,
+      "referred_by": null,
+      "referral_count": 0,
+      "referral_bonus": 0.0,
+      "created_at": "2026-03-28T19:42:01"
     }
   },
   "vip_codes": {},
@@ -356,11 +369,11 @@
     }
   },
   "_meta": {
-    "total_users": 25,
+    "total_users": 26,
     "total_vip_users": 0,
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 0,
-    "last_saved": "2026-03-28T19:41:45.154275Z"
+    "last_saved": "2026-03-28T19:42:04.714822Z"
   }
 }
