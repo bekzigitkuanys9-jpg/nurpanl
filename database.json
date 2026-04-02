@@ -6,7 +6,7 @@
       "phone_number": "+77785625741",
       "balance": 4601.0,
       "total_spent": 399.0,
-      "is_banned": false,
+      "is_banned": true,
       "is_vip": false,
       "referred_by": null,
       "referral_count": 0,
@@ -932,6 +932,6 @@
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 0,
-    "last_saved": "2026-04-02T03:53:26.035283Z"
+    "last_saved": "2026-04-02T03:53:49.139235Z"
   }
 }
