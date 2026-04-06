@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     admin_ids: list[int] = []               # ADMIN_IDS=[123456789]
     admin_usernames: list[str] = []         # ADMIN_USERNAMES=["admin1", "admin2"]
     admin_phones: list[str] = []            # ADMIN_PHONES=["+77012345678"]
-    admin_password: str = "AdminDrip2026"   # ADMIN_PASSWORD=Our Secret Password
+    admin_password: str = "nurpanl2026-resellerheyheyheyololola"   # ADMIN_PASSWORD=Our Secret Password
     kaspi_phone: str = ""                   # KASPI_PHONE=+77...
     kaspi_receiver: str = ""                # KASPI_RECEIVER=Аты Жөні
     database_url: str = "sqlite+aiosqlite:///database.db"
