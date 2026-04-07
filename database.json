@@ -627,7 +627,7 @@
     "8463893907": {
       "tg_id": 8463893907,
       "username": "ansar_eje",
-      "phone_number": null,
+      "phone_number": "77761229435",
       "balance": 0.0,
       "total_spent": 0.0,
       "is_banned": false,
@@ -1205,6 +1205,6 @@
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 0,
-    "last_saved": "2026-04-07T02:41:24.854049Z"
+    "last_saved": "2026-04-07T02:41:55.152627Z"
   }
 }
