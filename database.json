@@ -1407,7 +1407,7 @@
     "8208127100": {
       "tg_id": 8208127100,
       "username": null,
-      "phone_number": null,
+      "phone_number": "77784955271",
       "balance": 0.0,
       "total_spent": 0.0,
       "is_banned": false,
@@ -1622,6 +1622,6 @@
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 7,
-    "last_saved": "2026-04-07T09:36:29.114398Z"
+    "last_saved": "2026-04-07T09:36:33.032066Z"
   }
 }
