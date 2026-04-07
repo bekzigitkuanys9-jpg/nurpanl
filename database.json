@@ -1156,6 +1156,19 @@
       "referral_count": 0,
       "referral_bonus": 0.0,
       "created_at": "2026-04-07T02:42:24"
+    },
+    "6700945433": {
+      "tg_id": 6700945433,
+      "username": "DANIK_PANL",
+      "phone_number": "77054189163",
+      "balance": 0.0,
+      "total_spent": 0.0,
+      "is_banned": false,
+      "is_vip": false,
+      "referred_by": null,
+      "referral_count": 0,
+      "referral_bonus": 0.0,
+      "created_at": "2026-04-07T02:42:34"
     }
   },
   "vip_codes": {
@@ -1245,11 +1258,11 @@
     }
   },
   "_meta": {
-    "total_users": 89,
+    "total_users": 90,
     "total_vip_users": 1,
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 1,
-    "last_saved": "2026-04-07T02:42:28.507903Z"
+    "last_saved": "2026-04-07T02:42:38.455152Z"
   }
 }
