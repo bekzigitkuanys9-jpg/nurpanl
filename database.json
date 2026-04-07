@@ -1425,6 +1425,13 @@
       "price": 5200.0,
       "vip_price": 4700.0,
       "description": "PATO TEAM BLUE ANDROID 15 КҮН лицензиясы"
+    },
+    "17": {
+      "id": 17,
+      "name": "PATO TEAM BLUE ANDROID 1 Ай",
+      "price": 7000.0,
+      "vip_price": 6000.0,
+      "description": "PATO TEAM BLUE ANDROID 1 Ай лицензиясы"
     }
   },
   "_meta": {
@@ -1433,6 +1440,6 @@
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 1,
-    "last_saved": "2026-04-07T03:07:55.843460Z"
+    "last_saved": "2026-04-07T03:08:19.612215Z"
   }
 }
