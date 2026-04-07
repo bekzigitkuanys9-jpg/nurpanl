@@ -1372,6 +1372,13 @@
       "price": 399.0,
       "vip_price": 200.0,
       "description": "DRIP CLIENT 1-DAY лицензиясы"
+    },
+    "2": {
+      "id": 2,
+      "name": "🛒🛒 drip android 1 КҮН",
+      "price": 360.0,
+      "vip_price": 150.0,
+      "description": "🛒🛒 drip android 1 КҮН лицензиясы"
     }
   },
   "_meta": {
@@ -1380,6 +1387,6 @@
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 1,
-    "last_saved": "2026-04-07T04:09:48.421675Z"
+    "last_saved": "2026-04-07T04:12:06.425584Z"
   }
 }
