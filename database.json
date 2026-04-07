@@ -1380,6 +1380,13 @@
       "price": 3700.0,
       "vip_price": 3400.0,
       "description": "🛒 drip android 15 КҮН лицензиясы"
+    },
+    "5": {
+      "id": 5,
+      "name": "🛒 drip android 1 АЙ",
+      "price": 4700.0,
+      "vip_price": 4400.0,
+      "description": "🛒 drip android 1 АЙ лицензиясы"
     }
   },
   "_meta": {
@@ -1388,6 +1395,6 @@
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 1,
-    "last_saved": "2026-04-07T03:57:17.021108Z"
+    "last_saved": "2026-04-07T03:57:38.723564Z"
   }
 }
