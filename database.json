@@ -1409,13 +1409,6 @@
       "price": 8000.0,
       "vip_price": 7300.0,
       "description": "MIGUL PRO iOS 1 АЙ лицензиясы"
-    },
-    "12": {
-      "id": 12,
-      "name": "Hg cheats android 1 КҮН",
-      "price": 900.0,
-      "vip_price": 700.0,
-      "description": "Hg cheats android 1 КҮН лицензиясы"
     }
   },
   "_meta": {
@@ -1424,6 +1417,6 @@
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 1,
-    "last_saved": "2026-04-07T03:25:54.272125Z"
+    "last_saved": "2026-04-07T03:25:58.572242Z"
   }
 }
