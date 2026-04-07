@@ -1384,6 +1384,13 @@
       "price": 900.0,
       "vip_price": 700.0,
       "description": "Hg cheats android 1 КҮН лицензиясы"
+    },
+    "13": {
+      "id": 13,
+      "name": "Hg cheats android 10 КҮН",
+      "price": 3500.0,
+      "vip_price": 3200.0,
+      "description": "Hg cheats android 10 КҮН лицензиясы"
     }
   },
   "_meta": {
@@ -1392,6 +1399,6 @@
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 1,
-    "last_saved": "2026-04-07T03:06:07.171332Z"
+    "last_saved": "2026-04-07T03:06:27.725432Z"
   }
 }
