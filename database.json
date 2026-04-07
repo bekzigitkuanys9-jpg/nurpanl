@@ -1433,7 +1433,7 @@
     "8200491829": {
       "tg_id": 8200491829,
       "username": "Bek_panlel",
-      "phone_number": null,
+      "phone_number": "77474609360",
       "balance": 0.0,
       "total_spent": 0.0,
       "is_banned": false,
@@ -1653,6 +1653,6 @@
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 8,
-    "last_saved": "2026-04-07T10:34:43.053094Z"
+    "last_saved": "2026-04-07T10:34:45.957624Z"
   }
 }
