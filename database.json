@@ -1436,13 +1436,6 @@
       "price": 1000.0,
       "vip_price": 800.0,
       "description": "BR MODS PC - 1 КҮН лицензиясы"
-    },
-    "6": {
-      "id": 6,
-      "name": "MIGUL PRO iOS - 1 КҮН",
-      "price": 2500.0,
-      "vip_price": 2000.0,
-      "description": "MIGUL PRO iOS - 1 КҮН лицензиясы"
     }
   },
   "_meta": {
@@ -1451,6 +1444,6 @@
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 3,
-    "last_saved": "2026-04-07T06:06:45.285434Z"
+    "last_saved": "2026-04-07T06:06:53.082026Z"
   }
 }
