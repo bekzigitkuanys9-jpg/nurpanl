@@ -1429,13 +1429,6 @@
       "price": 4000.0,
       "vip_price": 3500.0,
       "description": "Drip client - 30 КҮН лицензиясы"
-    },
-    "5": {
-      "id": 5,
-      "name": "BR MODS PC - 1 КҮН",
-      "price": 1000.0,
-      "vip_price": 800.0,
-      "description": "BR MODS PC - 1 КҮН лицензиясы"
     }
   },
   "_meta": {
@@ -1444,6 +1437,6 @@
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 3,
-    "last_saved": "2026-04-07T06:06:53.082026Z"
+    "last_saved": "2026-04-07T06:06:58.979843Z"
   }
 }
