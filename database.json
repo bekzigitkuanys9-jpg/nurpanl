@@ -1290,7 +1290,7 @@
     "6623160025": {
       "tg_id": 6623160025,
       "username": "SmetanaFF_SOFT",
-      "phone_number": null,
+      "phone_number": "77059798193",
       "balance": 0.0,
       "total_spent": 0.0,
       "is_banned": false,
@@ -1398,6 +1398,6 @@
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 2,
-    "last_saved": "2026-04-07T05:14:15.325106Z"
+    "last_saved": "2026-04-07T05:14:18.525931Z"
   }
 }
