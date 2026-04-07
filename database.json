@@ -1367,13 +1367,6 @@
       "price": 4700.0,
       "vip_price": 4200.0,
       "description": "drip android 1 АЙ лицензиясы"
-    },
-    "6": {
-      "id": 6,
-      "name": "FLUORITE IOS 1 КҮН",
-      "price": 2500.0,
-      "vip_price": 2300.0,
-      "description": "FLUORITE IOS 1 КҮН лицензиясы"
     }
   },
   "_meta": {
@@ -1382,6 +1375,6 @@
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 1,
-    "last_saved": "2026-04-07T03:27:10.376827Z"
+    "last_saved": "2026-04-07T03:27:16.675709Z"
   }
 }
