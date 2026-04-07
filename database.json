@@ -1329,7 +1329,7 @@
     "8743997685": {
       "tg_id": 8743997685,
       "username": "kobeleklega",
-      "phone_number": null,
+      "phone_number": "77052189213",
       "balance": 0.0,
       "total_spent": 0.0,
       "is_banned": false,
@@ -1447,6 +1447,6 @@
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 4,
-    "last_saved": "2026-04-07T06:48:05.530649Z"
+    "last_saved": "2026-04-07T06:48:10.999083Z"
   }
 }
