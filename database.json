@@ -1367,6 +1367,13 @@
       "price": 4700.0,
       "vip_price": 4200.0,
       "description": "drip android 1 АЙ лицензиясы"
+    },
+    "6": {
+      "id": 6,
+      "name": "✏️ Баға өзгерту",
+      "price": 355.0,
+      "vip_price": null,
+      "description": "✏️ Баға өзгерту лицензиясы"
     }
   },
   "_meta": {
@@ -1375,6 +1382,6 @@
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 1,
-    "last_saved": "2026-04-07T03:27:16.675709Z"
+    "last_saved": "2026-04-07T03:28:00.973152Z"
   }
 }
