@@ -1443,6 +1443,13 @@
       "price": 2500.0,
       "vip_price": 2000.0,
       "description": "MIGUL PRO iOS - 1 КҮН лицензиясы"
+    },
+    "7": {
+      "id": 7,
+      "name": "PATO TEAM - 3 КҮН",
+      "price": 2500.0,
+      "vip_price": 1700.0,
+      "description": "PATO TEAM - 3 КҮН лицензиясы"
     }
   },
   "_meta": {
@@ -1451,6 +1458,6 @@
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 3,
-    "last_saved": "2026-04-07T05:51:31.296077Z"
+    "last_saved": "2026-04-07T05:52:29.197536Z"
   }
 }
