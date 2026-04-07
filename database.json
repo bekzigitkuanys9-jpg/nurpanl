@@ -1422,13 +1422,6 @@
       "price": 3700.0,
       "vip_price": 3000.0,
       "description": "Drip client - 15 КҮН лицензиясы"
-    },
-    "4": {
-      "id": 4,
-      "name": "Drip client - 30 КҮН",
-      "price": 4000.0,
-      "vip_price": 3500.0,
-      "description": "Drip client - 30 КҮН лицензиясы"
     }
   },
   "_meta": {
@@ -1437,6 +1430,6 @@
     "total_keys": 1,
     "total_purchases": 1,
     "total_referrals": 3,
-    "last_saved": "2026-04-07T06:06:58.979843Z"
+    "last_saved": "2026-04-07T06:07:03.476944Z"
   }
 }
