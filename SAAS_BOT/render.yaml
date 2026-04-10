@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: nurpanl-saas
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python SAAS_BOT/main_saas.py
+    envVars:
+      - key: USE_WEBHOOK
+        value: "True"
+      - key: PORT
+        value: "8000"
