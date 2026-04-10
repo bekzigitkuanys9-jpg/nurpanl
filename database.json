@@ -1768,7 +1768,7 @@
       "id": 6,
       "name": "IOS | FLOURITE - 1 КҮН",
       "price": 2000.0,
-      "vip_price": 2000.0,
+      "vip_price": 1800.0,
       "description": "IOS | FLOURITE - 1 КҮН лицензиясы"
     },
     "7": {
@@ -1820,6 +1820,6 @@
     "total_keys": 2,
     "total_purchases": 2,
     "total_referrals": 10,
-    "last_saved": "2026-04-10T15:35:14.680413Z"
+    "last_saved": "2026-04-10T15:35:25.588032Z"
   }
 }
