@@ -1747,7 +1747,7 @@
       "id": 3,
       "name": "drip android 15 КҮН",
       "price": 2600.0,
-      "vip_price": 3500.0,
+      "vip_price": 2500.0,
       "description": "drip android 15 КҮН лицензиясы"
     },
     "4": {
@@ -1820,6 +1820,6 @@
     "total_keys": 2,
     "total_purchases": 2,
     "total_referrals": 10,
-    "last_saved": "2026-04-10T15:32:36.059253Z"
+    "last_saved": "2026-04-10T15:32:54.976173Z"
   }
 }
