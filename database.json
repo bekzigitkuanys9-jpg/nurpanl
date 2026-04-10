@@ -1754,7 +1754,7 @@
       "id": 4,
       "name": "drip android 1 Ай",
       "price": 3700.0,
-      "vip_price": 4500.0,
+      "vip_price": 3500.0,
       "description": "drip android 1 Ай лицензиясы"
     },
     "5": {
@@ -1820,6 +1820,6 @@
     "total_keys": 2,
     "total_purchases": 2,
     "total_referrals": 10,
-    "last_saved": "2026-04-10T15:33:13.962767Z"
+    "last_saved": "2026-04-10T15:33:37.462257Z"
   }
 }
