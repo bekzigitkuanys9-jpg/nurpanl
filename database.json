@@ -1740,7 +1740,7 @@
       "id": 2,
       "name": "drip android 3 КҮН",
       "price": 800.0,
-      "vip_price": 1000.0,
+      "vip_price": 700.0,
       "description": "drip android 3 КҮН лицензиясы"
     },
     "3": {
@@ -1820,6 +1820,6 @@
     "total_keys": 2,
     "total_purchases": 2,
     "total_referrals": 10,
-    "last_saved": "2026-04-10T15:32:08.331540Z"
+    "last_saved": "2026-04-10T15:32:18.862659Z"
   }
 }
