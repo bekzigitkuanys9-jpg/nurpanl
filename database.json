@@ -1812,6 +1812,13 @@
       "price": 2500.0,
       "vip_price": 2300.0,
       "description": "🛒 Prime mods android 10 КҮН лицензиясы"
+    },
+    "13": {
+      "id": 13,
+      "name": "🛒 СЕРТИФИКАТ iOS - 1 ГОД \n\n📝 Гарантия 1 месяц от отвязки.",
+      "price": 2700.0,
+      "vip_price": 2500.0,
+      "description": "🛒 СЕРТИФИКАТ iOS - 1 ГОД \n\n📝 Гарантия 1 месяц от отвязки. лицензиясы"
     }
   },
   "_meta": {
@@ -1820,6 +1827,6 @@
     "total_keys": 2,
     "total_purchases": 2,
     "total_referrals": 10,
-    "last_saved": "2026-04-10T15:38:22.904288Z"
+    "last_saved": "2026-04-10T15:40:20.896974Z"
   }
 }
