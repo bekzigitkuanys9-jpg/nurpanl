@@ -1761,7 +1761,7 @@
       "id": 5,
       "name": "PATO TEAM - 3 КҮН",
       "price": 2000.0,
-      "vip_price": 2000.0,
+      "vip_price": 1800.0,
       "description": "PATO TEAM - 3 КҮН лицензиясы"
     },
     "6": {
@@ -1820,6 +1820,6 @@
     "total_keys": 2,
     "total_purchases": 2,
     "total_referrals": 10,
-    "last_saved": "2026-04-10T15:34:45.620297Z"
+    "last_saved": "2026-04-10T15:34:57.509926Z"
   }
 }
