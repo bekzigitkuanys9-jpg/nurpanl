@@ -2226,13 +2226,6 @@
       "price": 9200.0,
       "vip_price": 8888.0,
       "description": "IOS | FLOURITE - 30 КҮН лицензиясы"
-    },
-    "9": {
-      "id": 9,
-      "name": "Hg android - 1 КҮН",
-      "price": 700.0,
-      "vip_price": 650.0,
-      "description": "Hg android - 1 КҮН лицензиясы"
     }
   },
   "_meta": {
@@ -2241,6 +2234,6 @@
     "total_keys": 2,
     "total_purchases": 2,
     "total_referrals": 10,
-    "last_saved": "2026-04-15T17:29:59.838062Z"
+    "last_saved": "2026-04-15T17:30:06.634289Z"
   }
 }
