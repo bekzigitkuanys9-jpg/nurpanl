@@ -2247,13 +2247,6 @@
       "price": 4500.0,
       "vip_price": 4300.0,
       "description": "Hg android - 30 КҮН лицензиясы"
-    },
-    "12": {
-      "id": 12,
-      "name": "🛒 Prime mods android 10 КҮН",
-      "price": 2500.0,
-      "vip_price": 2300.0,
-      "description": "🛒 Prime mods android 10 КҮН лицензиясы"
     }
   },
   "_meta": {
@@ -2262,6 +2255,6 @@
     "total_keys": 2,
     "total_purchases": 2,
     "total_referrals": 10,
-    "last_saved": "2026-04-15T17:29:19.439625Z"
+    "last_saved": "2026-04-15T17:29:42.745288Z"
   }
 }
