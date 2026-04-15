@@ -1988,6 +1988,32 @@
       "referral_count": 0,
       "referral_bonus": 0.0,
       "created_at": "2026-04-15T13:06:14"
+    },
+    "5505332002": {
+      "tg_id": 5505332002,
+      "username": null,
+      "phone_number": null,
+      "balance": 0.0,
+      "total_spent": 0.0,
+      "is_banned": false,
+      "is_vip": false,
+      "referred_by": null,
+      "referral_count": 0,
+      "referral_bonus": 0.0,
+      "created_at": "2026-04-15T16:45:47"
+    },
+    "8491935338": {
+      "tg_id": 8491935338,
+      "username": null,
+      "phone_number": "77764542017",
+      "balance": 0.0,
+      "total_spent": 0.0,
+      "is_banned": false,
+      "is_vip": false,
+      "referred_by": null,
+      "referral_count": 0,
+      "referral_bonus": 0.0,
+      "created_at": "2026-04-15T17:25:15"
     }
   },
   "vip_codes": {
@@ -2225,11 +2251,11 @@
     }
   },
   "_meta": {
-    "total_users": 153,
+    "total_users": 155,
     "total_vip_users": 0,
     "total_keys": 2,
     "total_purchases": 2,
     "total_referrals": 10,
-    "last_saved": "2026-04-15T13:06:19.360889Z"
+    "last_saved": "2026-04-15T17:25:18.762322Z"
   }
 }
