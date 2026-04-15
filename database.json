@@ -2233,13 +2233,6 @@
       "price": 700.0,
       "vip_price": 650.0,
       "description": "Hg android - 1 КҮН лицензиясы"
-    },
-    "10": {
-      "id": 10,
-      "name": "Hg android - 10 КҮН",
-      "price": 3200.0,
-      "vip_price": 3000.0,
-      "description": "Hg android - 10 КҮН лицензиясы"
     }
   },
   "_meta": {
@@ -2248,6 +2241,6 @@
     "total_keys": 2,
     "total_purchases": 2,
     "total_referrals": 10,
-    "last_saved": "2026-04-15T17:29:50.838666Z"
+    "last_saved": "2026-04-15T17:29:59.838062Z"
   }
 }
