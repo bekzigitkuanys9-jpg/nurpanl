@@ -2192,13 +2192,6 @@
       "vip_price": 2500.0,
       "description": "drip android 15 КҮН лицензиясы"
     },
-    "4": {
-      "id": 4,
-      "name": "drip android 1 Ай",
-      "price": 3700.0,
-      "vip_price": 4500.0,
-      "description": "drip android 1 Ай лицензиясы"
-    },
     "5": {
       "id": 5,
       "name": "PATO TEAM - 3 КҮН",
@@ -2227,6 +2220,6 @@
     "total_keys": 2,
     "total_purchases": 2,
     "total_referrals": 10,
-    "last_saved": "2026-04-15T17:30:13.538499Z"
+    "last_saved": "2026-04-15T17:31:23.735151Z"
   }
 }
