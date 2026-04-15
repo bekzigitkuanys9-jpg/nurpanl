@@ -2014,6 +2014,19 @@
       "referral_count": 0,
       "referral_bonus": 0.0,
       "created_at": "2026-04-15T17:25:15"
+    },
+    "7677758738": {
+      "tg_id": 7677758738,
+      "username": null,
+      "phone_number": "77089681862",
+      "balance": 0.0,
+      "total_spent": 0.0,
+      "is_banned": false,
+      "is_vip": false,
+      "referred_by": null,
+      "referral_count": 0,
+      "referral_bonus": 0.0,
+      "created_at": "2026-04-15T17:27:20"
     }
   },
   "vip_codes": {
@@ -2251,11 +2264,11 @@
     }
   },
   "_meta": {
-    "total_users": 155,
+    "total_users": 156,
     "total_vip_users": 0,
     "total_keys": 2,
     "total_purchases": 2,
     "total_referrals": 10,
-    "last_saved": "2026-04-15T17:25:18.762322Z"
+    "last_saved": "2026-04-15T17:27:26.093933Z"
   }
 }
